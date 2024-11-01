@@ -59,7 +59,7 @@ const Cart = () => {
               Invalid Coupon <VscError />
             </span>
           ))}
-        {cartItems.length > 0 && <Link to={"shipping"}>Checkout</Link>}
+        {cartItems.length > 0 && <Link to={"/shipping"}>Checkout</Link>}
       </aside>
     </div>
   );

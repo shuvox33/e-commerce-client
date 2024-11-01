@@ -19,6 +19,7 @@ const Coupon = lazy(() => import("./pages/admin/apps/coupon"));
 const Stopwatch = lazy(() => import("./pages/admin/apps/stopwatch"));
 const Toss = lazy(() => import("./pages/admin/apps/toss"));
 const NewProduct = lazy(() => import("./pages/admin/management/newproduct"));
+const Shipping = lazy(() => import("./pages/Shipping"));
 const ProductManagement = lazy(
   () => import("./pages/admin/management/productmanagement")
 );
@@ -30,22 +31,26 @@ function App() {
   return (
     <Router>
       {/* header  */}
-      <Header/>
-      
+      <Header />
+
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/search" element={<Search />} />
+          {/* logged in user routes  */}
+          <Route>
+            <Route path="/shipping" element={<Shipping />} />
+          </Route>
           {/* admin routes  */}
           <Route
-            // element={
-            //   <ProtectedRoute
-            //     isAuthenticated={true}
-            //     adminRoute={true}
-            //     isAdmin={true}
-            //   />
-            // }
+          // element={
+          //   <ProtectedRoute
+          //     isAuthenticated={true}
+          //     adminRoute={true}
+          //     isAdmin={true}
+          //   />
+          // }
           >
             <Route path="/admin/dashboard" element={<Dashboard />} />
             <Route path="/admin/product" element={<Products />} />
