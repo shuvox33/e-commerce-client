@@ -15,8 +15,8 @@ a {
   color: black;
 }
 
-body{
-    user-select: none;
+body {
+  user-select: none;
 }
 
 $color1: white;
@@ -44,51 +44,63 @@ $color3: rgb(0, 104, 136);
 @import "admin-styles/dashboardapp";
 @import "admin-styles/mediaquery";
 
-.navbar {
-    @include flex(row, space-around, center);
-    margin:0 auto;
-
-    .header{
-        @include flex(row, flex-end, stretch, 1.2rem);
-        padding: 1rem;
-        a{
-            color: $color2;
-            letter-spacing: 2px;
-            font-size: 1.2rem;
-
-            &:hover{
-                color:$color3
-            }
-        }
-        button{
-            border:none;
-            background-color: transparent;
-            font-size: 1.2rem;
-            cursor: pointer;
-            &:hover{
-                color:$color3;
-            }
-        }
-        dialog{
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            width: 150px;
-            position: absolute;
-            z-index: 10;
-            left: calc(100% - 280px);
-            top: 8px;
-            >div{
-                @include flex(column, flex-start, center, 0.25rem);
-            }
-        }
-    }
+.container {
+  max-width: 1367px;
+  width: 100%;
+  margin: auto;
+  overflow: auto;
+  > h1 {
+    @include heading;
+    margin: 1rem 0;
+    text-align: left;
+  }
 }
 
-.heading{
+.heading {
   @include heading;
   margin: 1rem 0;
   text-align: center;
+}
+
+.navbar {
+  @include flex(row, space-around, center);
+  margin: 0 auto;
+
+  .header {
+    @include flex(row, flex-end, stretch, 1.2rem);
+    padding: 1rem;
+    a {
+      color: $color2;
+      letter-spacing: 2px;
+      font-size: 1.2rem;
+
+      &:hover {
+        color: $color3;
+      }
+    }
+    button {
+      border: none;
+      background-color: transparent;
+      font-size: 1.2rem;
+      cursor: pointer;
+      &:hover {
+        color: $color3;
+      }
+    }
+    dialog {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      width: 150px;
+      position: absolute;
+      z-index: 10;
+      left: calc(100% - 280px);
+      top: 8px;
+      > div {
+        @include flex(column, flex-start, center, 0.25rem);
+      }
+    }
+  }
 }
 
 .admin-container {
